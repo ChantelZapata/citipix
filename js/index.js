@@ -12,6 +12,8 @@
 	Delay code frome excuting until images have loaded
 	Clear field after submission*/
 
+// ---------------------------------------------------------------------------------------------
+
 // $('.entry').on('submit', function(event){
 //   e.preventDefault();
 //   showCity();
@@ -52,7 +54,8 @@ $(document).ready(function(){
 
 
 $('#submit-btn').on('submit', function(event){
-  e.preventDefault();
+  event.preventDefault();
+  submit();
   
 	var userEntry = $('#city-type').val();
 
