@@ -12,67 +12,39 @@
 	Delay code frome excuting until images have loaded
 	Clear field after submission*/
 
-// ---------------------------------------------------------------------------------------------
-
-// $('.entry').on('submit', function(event){
-//   e.preventDefault();
-//   showCity();
-// });
-
-// function showCity () {
-// 	var userEntry = $('#city-type').val();
-
-// 	var newYork = ["New York", "New York City", "NYC"];
-// 	var sanFran = ["San Francisco", "SF", "Bay Area"];
-// 	var losAngeles = ["Los Angeles", "LA", "LAX"];
-// 	var austin = ["Austin", "ATX"];
-// 	var sydney = ["Sydney", "SYD"];
-
-// 	//console.log(userEntry);
-
-// 	if(userEntry === newYork[0]; || userEntry === newYork[1]; || userEntry === newYork[2]; ) {
-//  	 	$('.container').css('background','url(../images/nyc.jpg)').fadeIn(700);
-//  	 } else if(userEntry === sanFran[0]; || userEntry === sanFran[1]; || userEntry === sanFran[2];) {
-//  	 	$('.container').css('background','url(../images/sf.jpg)').fadeIn(700);
-//  	 } else if(userEntry === losAngeles[0]; || userEntry === losAngeles[1]; || userEntry === losAngeles[2];) {
-//  	 	$('.container').css('background','url(../images/la.jpg)').fadeIn(700);
-//  	 } else if(userEntry === austin[0]; || userEntry === austin[1]; ) {
-//  	 	$('.container').css('background','url(../austin.jpg)').fadeIn(700);
-//  	 } else if(userEntry === sydney[0]; || userEntry === sydney[1];) {
-//  	 	$('.container').css('background','url(../images/sydney.jpg)').fadeIn(700);
-//  	 }
-//  	 $('#city-type'.val('');
-// };
-
-
-// $('#submit-btn').on('submit', showCity); //reset form value 
 
 // ---------------------------------------------------------------------------------------------
 
 
 $('#submit-btn').click(function(event){
   event.preventDefault();
+  removeImg();
   showCity();
 });
 
 function showCity(){
-  
 	var userEntry = $('#city-type').val();
-	console.log(userEntry);
-
 		
-		if(userEntry === 'New York' || userEntry === 'New York City' || userEntry === 'NYC'){
-	 	 	$('body').addClass('nyc');
-	 	 } else if(userEntry === 'San Francisco' || userEntry === 'SF' || userEntry === 'Bay Area'){
-	 	 	$('body').addClass('sf');
-	 	 } else if(userEntry === 'Los Angeles' || userEntry === 'LA' || userEntry === 'LAX'){
-	 	 	$('body').addClass('la');
-	 	 } else if(userEntry === 'Austin' || userEntry === 'ATX' ){
-	 	 	$('body').addClass('austin');
-	 	 } else if(userEntry === 'Sydney' || userEntry === 'SYD'){
-	 	 	$('body').addClass('sydney');
-	 	 }
-	 	 $('#city-type').val('');
+	if(userEntry === 'New York' || userEntry === 'New York City' || userEntry === 'NYC'){
+		addImg('nyc');
+ 	 } else if(userEntry === 'San Francisco' || userEntry === 'SF' || userEntry === 'Bay Area'){
+ 	 	addImg('sf');
+ 	 } else if(userEntry === 'Los Angeles' || userEntry === 'LA' || userEntry === 'LAX'){
+ 	 	addImg('la');
+ 	 } else if(userEntry === 'Austin' || userEntry === 'ATX' ){
+ 	 	addImg('austin');
+ 	 } else if(userEntry === 'Sydney' || userEntry === 'SYD'){
+ 	 	$('body').addClass('sydney');
+ 	 }
+ 	 $('#city-type').val('');
+};
+
+function removeImg() {
+	$('body').removeClass();
+};
+
+function addImg(city) {
+	$('body').addClass(city);
 };
 
 
