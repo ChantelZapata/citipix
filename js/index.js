@@ -25,7 +25,7 @@ var cities = ["NYC", "SF", "LA", "ATX", "SYD"];
 
 for (var i = 0; i < cities.length; i++) { 
 	console.log(cities[i]); //use i as you set that letter to be representative of the index of the array
-	$('#city-options').append('<option val="cityname">'+cities[i]+'</option>');
+	$('#city-options').append('<option value="'+cities[i]+'">'+cities[i]+'</option>');
 };
 
 $('#city-options').on('change', function(event){
@@ -36,19 +36,19 @@ $('#city-options').on('change', function(event){
 
 function showCity(){
 	var cityname = $('#city-options').val();
-		
-	if(cities === [0]){
-		addImg('nyc');
- 	 } else if(cities === [1]){
- 	 	addImg('sf');
- 	 } else if(cities === [2]){
- 	 	addImg('la');
- 	 } else if(cities === [3]){
- 	 	addImg('austin');
- 	 } else if(cities === [4]){
- 	 	addImg('sydney');
- 	 }
- 	 $('#city-option').val('');
+	addImg(cityname.toLowerCase());
+	// if(cities === [0]){
+	// 	addImg('nyc');
+ // 	 } else if(cities === [1]){
+ // 	 	addImg('sf');
+ // 	 } else if(cities === [2]){
+ // 	 	addImg('la');
+ // 	 } else if(cities === [3]){
+ // 	 	addImg('austin');
+ // 	 } else if(cities === [4]){
+ // 	 	addImg('sydney');
+ // 	 }
+ // 	 $('#city-option').val('');
 };
 
 function removeImg() {
